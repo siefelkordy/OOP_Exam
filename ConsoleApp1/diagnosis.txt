@@ -1,0 +1,4 @@
+Exception: IndexOutOfRangeException at books[i] in foreach loop.
+Root cause: i is incremented in do-while and while loops, but foreach accesses books[i] with no increment of i.
+books.Length = 3, i goes 0->3 (do-while), then foreach accesses books[3] which is out of bounds.
+Fix: Either fix do-while/while loops or change foreach to use book variable.
